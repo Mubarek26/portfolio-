@@ -1,0 +1,110 @@
+@import "../../styles/contants.scss";
+
+.wrapper {
+  background: white;
+  overflow: hidden;
+
+  .container {
+    flex-direction: column;
+    gap: 2rem;
+
+    .heading {
+      width: 100%;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+
+      > :nth-child(2) {
+        text-decoration: underline;
+        color: orange;
+        cursor: pointer;
+      }
+    }
+
+    .showCase {
+      width: 100%;
+      gap: 1.5rem;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      > img {
+        @media (max-width: $sm) {
+          width: 100%;
+        }
+        border-radius: 20px;
+        max-width: 24rem;
+        max-height: 18rem;
+        box-shadow: 0px 21px 13px rgba(0, 0, 0, 0.13);
+        cursor: pointer;
+      }
+    }
+
+    @media (max-width: $sm) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+.githup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+  min-height: 100vh; // Full viewport height on small screens
+  flex-direction: column;
+
+  @media (max-width: $sm) {
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh; // Vertically centers the button on small screens
+  }
+}
+
+.btn-github {
+  color: var(--white);
+  background-color: var(--github);
+  border: var(--github);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.95);
+  gap: 16px;
+  margin: 0 auto;
+  padding: 12px 24px;
+
+  @media (max-width: $sm) {
+    width: fit-content;
+  }
+}
+
+.btn-github:hover {
+  color: var(--github);
+  background-color: var(--white);
+}
+
+.btn {
+  font-family: "Roboto";
+  padding: 14px 32px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.5s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -ms-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+}

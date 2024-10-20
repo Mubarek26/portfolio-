@@ -1,0 +1,138 @@
+@import "./../../styles/contants.scss";
+
+.contact-btn {
+  background: rgb(249, 105, 14);
+  color: white;
+  border: none;
+  border-radius: 50px; /* Fully rounded corners */
+  padding: 12px 25px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s ease; /* Smooth transition */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  overflow: hidden; /* Ensures the glow stays within the button */
+}
+
+.contact-btn:hover {
+  transform: translateY(-5px); /* Lift the button on hover */
+  background: rgba(249, 105, 14, 0.8);
+  box-shadow: 0px 5px 15px rgba(249, 105, 14, 0.3);
+}
+
+.contact-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.15); /* Shimmer effect */
+  transition: all 0.75s ease;
+  transform: translateX(-50%) rotate(45deg) scale(0); /* Hidden before hover */
+}
+
+.contact-link {
+  color: white; /* White text */
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none; /* No underline */
+  position: relative;
+  z-index: 1; /* Ensure text is above the shimmer */
+}
+
+.wrapper {
+  position: relative;
+  z-index: 99;
+  opacity: 1;
+  transform: none;
+  position: sticky;
+  top: 0px;
+  transition: all 300ms ease;
+
+  .container {
+    position: relative;
+    justify-content: space-between;
+    font-weight: 500;
+
+    .name {
+      font-size: 1.5rem;
+      font-weight: 500;
+      font-weight: bold;
+    }
+
+    .myname {
+      color: rgb(249, 105, 14);
+    }
+
+    .menu {
+      @media (max-width: 902px) {
+        position: absolute;
+        list-style: none;
+        gap: 2rem;
+        font-weight: 500;
+        flex-direction: column;
+        right: 0;
+        top: 3rem;
+        height: calc(100vh - 6.3rem);
+        width: 50%;
+        min-width: 15rem;
+        background: white;
+        padding: 3rem;
+        display: none; // Hide by default on mobile and tablet
+        border-radius: 10px;
+        transition: opacity 0.4s ease, transform 0.4s ease; // Add transition effects
+        align-items: flex-start;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+        opacity: 0; // Start with opacity 0
+        transform: translateY(-20px); // Start with a slight upward offset
+      }
+
+      &.open {
+        // Show the menu when opened
+        display: flex; // Show the menu when opened
+        opacity: 1; // Fade in
+        transform: translateY(0); // Move to original position
+      }
+
+      text-transform: uppercase;
+      font-size: 1rem;
+      list-style: none;
+      gap: 1.5rem;
+      cursor: pointer;
+
+      li {
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        &:hover {
+          color: #f4850a; // Change color on hover
+          transition: 0.4s;
+        }
+      }
+
+      .phone {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+
+        svg {
+          color: $secondary;
+          background-color: white;
+          padding: 10px;
+          border-radius: 999px;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+        }
+      }
+    }
+
+    .menuIcon {
+      display: none; // Hide by default
+
+      @media (max-width: 902px) {
+        display: flex; // Show for mobile and tablet
+        cursor: pointer;
+      }
+    }
+  }
+}
