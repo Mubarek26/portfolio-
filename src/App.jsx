@@ -1,7 +1,7 @@
 import React from "react";
 
 import About from "./components/About/AboutMe";
-import VideoAd from "./components/Video/VideoAd";
+
 import Experties from "./components/Experties/Experties";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
